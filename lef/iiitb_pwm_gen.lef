@@ -1,0 +1,106 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO iiitb_pwm_gen
+  CLASS BLOCK ;
+  FOREIGN iiitb_pwm_gen ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 150.000 BY 150.000 ;
+  PIN PWM_OUT
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 122.440 4.000 123.040 ;
+    END
+  END PWM_OUT
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 0.090 0.000 0.370 4.000 ;
+    END
+  END clk
+  PIN decrease_duty
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 146.000 85.040 150.000 85.640 ;
+    END
+  END decrease_duty
+  PIN increase_duty
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 90.250 146.000 90.530 150.000 ;
+    END
+  END increase_duty
+  PIN reset
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 116.010 0.000 116.290 4.000 ;
+    END
+  END reset
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 22.090 10.640 23.690 138.960 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 56.830 10.640 58.430 138.960 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 91.570 10.640 93.170 138.960 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 126.310 10.640 127.910 138.960 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 39.460 10.640 41.060 138.960 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 74.200 10.640 75.800 138.960 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 108.940 10.640 110.540 138.960 ;
+    END
+  END vssd1
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 144.440 138.805 ;
+      LAYER met1 ;
+        RECT 0.070 10.640 144.440 138.960 ;
+      LAYER met2 ;
+        RECT 0.100 145.720 89.970 146.000 ;
+        RECT 90.810 145.720 141.130 146.000 ;
+        RECT 0.100 4.280 141.130 145.720 ;
+        RECT 0.650 4.000 115.730 4.280 ;
+        RECT 116.570 4.000 141.130 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 123.440 146.000 138.885 ;
+        RECT 4.400 122.040 146.000 123.440 ;
+        RECT 4.000 86.040 146.000 122.040 ;
+        RECT 4.000 84.640 145.600 86.040 ;
+        RECT 4.000 10.715 146.000 84.640 ;
+  END
+END iiitb_pwm_gen
+END LIBRARY
+
